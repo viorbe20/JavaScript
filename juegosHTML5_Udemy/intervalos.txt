@@ -1,5 +1,0 @@
-Curso: Programa tus Primeros Juegos HTML5 con JavaScript.
-Plataforma: Udemy.
-Autor: Javier Muñiz.
-
-Intervalos => Tipo de instrucción que nos permite ejecutar una función cada cierto tiempo.
