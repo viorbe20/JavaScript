@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Virginia Ordoño Bernier">
+    <meta name="reference" content="Cristina Ponce, JavaScript para principiantes, OpenWebinars">
+    <title>Ejercicio Boolean Message</title>
+</head>
+
+<body>
+    <h1 class="statement">Ejercicio 2. Muestra mensaje booleano</h1>
+    <p class="problem">Muestra la siguiente información al usuario:</p>
+    <li>Usuario registrado: "Haz clic aquí para ver el contenido".</li>
+    <li>Usuario NO registrado: "Debes registrarte para leer el artículo".</li>
+    <hr>
+    <br>
+
+    <p class="block-text"></p>
+
+    <script type="text/javascript">
+        const USER_LOGGED = false; //Cambiar a true para que cambie el mensaje.
+        const BLOCK_TEXT = document.querySelector('.block-text');
+
+        if (USER_LOGGED) {
+            BLOCK_TEXT.innerHTML = 'Haz clic aquí para ver el contenido.';
+        } else {
+            BLOCK_TEXT.innerHTML = 'Debes registrarte para leer el artículo.';
+        }
+    </script>
+
+</body>
+
+</html>
