@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Virginia Ordoño Bernier">
+    <meta name="reference" content="Cristina Ponce, JavaScript para principiantes, OpenWebinars">
+    <meta name="exercise 1" content="Escribe una newsletter con unas variables dinámicas dadas">
+    <title>Ejercicio Newsletter</title>
+</head>
+
+<body>
+    <p class="newsletter"></p>
+    <script type="text/javascript">
+        const NAME = 'Virginia';
+        const COURSE = 'Javascript para principiantes';
+        const DISCOUNT = 20;
+        const NEWSLETTER =
+            `Hola ${NAME}, Como regalo de bienvenida queremos hacerte un descuento de ${DISCOUNT} % en el curso de ${COURSE}. Un saludo.`;
+
+        document.querySelector('.newsletter').innerHTML = NEWSLETTER;
+    </script>
+
+</body>
+
+</html>
