@@ -1,5 +1,5 @@
 Ejemplos sacados del curso JavaScript Intermedio.
-Plataforma: .
+Plataforma: Open Webinars.
 Autor: Jonatha Rodríguez.
 Fecha: julio 2021
 
