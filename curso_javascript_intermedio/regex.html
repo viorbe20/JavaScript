@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Virginia Ordoño Bernier">
+    <meta name="reference" content="Jonathan Rodríguez, JavaScript Intermedio-Expresiones Regulares, OpenWebinars">
+    <title>REGEX</title>
+</head>
+
+<body>
+    <p>Expresiones regulares</p>
+    <script type='text/javascript'>
+        var text = 'hola mundo';
+        var text3 = 'HOLA MUNDO'
+
+        //Expresión regular de letras minúsculas
+        var regex = /[a-z]$/g;
+        console.log('Comprueba todo minúsculas en -> ' + text);
+        //Devuelve el número de coincidencias
+        console.log(text.search(regex));
+        //Devuelve true or false
+        console.log(regex.test(text));
+        console.log('');
+
+        console.log('Comprueba todo minúsculas en -> ' + text3);
+        console.log(text3.search(regex));
+        console.log(regex.test(text3));
+        console.log('');
+
+        //Expresión regular. Comprueba que termine en cualquier caracter
+        var regex2 = /bien./
+        var text2 = 'bienvenido';
+        console.log('Comprueba palabra -bien- y termina en cualquier carácter -> ' + text2);
+        console.log(text2.search(regex2));
+        console.log(regex2.test(text2));
+        console.log('');
+
+        var text3 = 'bienvenida';
+        console.log('Comprueba palabra -bien- y termina en cualquier carácter -> ' + text3);
+        console.log(text3.search(regex2));
+        console.log(regex2.test(text3));
+    </script>
+
+</body>
+
+</html>
