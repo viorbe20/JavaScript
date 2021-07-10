@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Virginia Ordoño Bernier">
+    <meta name="reference" content=" Pablo Huet Carrasco, JavaScript Avanzado-Introducción, OpenWebinars">
+    <meta name="content" content="Ejemplos de coerción con numbers">
+    <title>Number Coercion</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        //Coerción explícita. Función Number()
+        console.log('Coersión explícita');
+        console.log('------------------');
+        console.log("Number('') -> " + Number(''));
+        console.log("Number(null) -> " + Number(null));
+        console.log("Number(10) -> " + Number(10));
+        console.log("Number('10') -> " + Number('10'));
+        console.log("Number(NaN) -> " + Number(NaN));
+        console.log("Number(null) -> " + Boolean(null));
+        console.log("Number(undefined) -> " + Number(undefined));
+        console.log("Number(false) -> " + Number(false));
+        console.log("Number(true) -> " + Number(true));
+        console.log("Number(-29.45) -> " + Number(-29.45));
+        console.log("Number('28s') -> " + Number('28s'));
+
+        //Coerción implícita es más frecuente
+        //null==0 o null==undefined no producen coersion y devuelven false
+        console.log('');
+        console.log('Coersión implícita');
+        console.log('------------------');
+        console.log("+'123' -> 123");
+        console.log("123 |= '123' -> false");
+        console.log("4 > '5'-> true");
+        console.log("4 > '5'-> true");
+        console.log("5/null -> Infinity");
+        console.log("true | 0 -> 1");
+    
+    </script>
+</body>
+
+</html>

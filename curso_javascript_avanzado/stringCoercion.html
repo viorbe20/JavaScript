@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Virginia Ordoño Bernier">
+    <meta name="reference" content="Pablo Huet Carrasco, JavaScript Avanzado-Introducción, OpenWebinars">
+    <meta name="content" content="Ejemplos de coerción con strings">
+    <title>String Coercion</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        //Coerción explícita o casting
+        let num = 123;
+        console.log('Coersión explícita');
+        console.log('------------------');
+        console.log('String(123) -> ' + String(123));
+        console.log('String(-14.4) -> ' + String(-14.4));
+        console.log('String(null) -> ' + String(null));
+        console.log('String(undefined) -> ' + String(undefined));
+        console.log('String(true) -> ' + String(true));
+        console.log('String(false) -> ' + String(false));
+        console.log('');
+        console.log('Coersión explícita con toString');
+        console.log('-------------------------------');
+        console.log('let num 123');
+        console.log('typeof num -> ' + typeof num);
+        console.log('typeof num.toString -> ' + typeof num.toString());
+
+        //Coerción implícita, solo lenguajes con tipado débil
+        //Con operador suma (+) con un string y otro tipo, lo concatena
+        console.log('');
+        let result = 123 + '2';
+        console.log('Coersión implícita (concatena)');
+        console.log('------------------------------');
+        console.log('123 como number + 2 como string = ' + result);
+    </script>
+</body>
+
+</html>

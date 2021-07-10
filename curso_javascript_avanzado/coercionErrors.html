@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Virginia Ordoño Bernier">
+    <meta name="reference" content="Pablo Huet Carrasco, JavaScript Avanzado-Introducción, OpenWebinars">
+    <meta name="content" content="Errores con coerción">
+    <title>Coercion Errors</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        console.log("'180'+200+3 -> '1802003'");
+        console.log("'hola'++'mundo' -> 'holaNaN'");
+        console.log("!+[]+[]+![] -> truefalse");
+        console.log("if('true' == true){...} -> false, no entra");
+        console.log("if('true'){...} -> true, entra");
+        console.log("if(!!'false'==!!'true') -> true, entra");
+        console.log("if(0){...} -> false, no entra");
+        console.log("if(38){...} -> true, entra");
+        console.log('');
+
+        console.log('Coerción con == y !=. Hallan la igualdad');
+        console.log('----------------------------------------');
+        console.log("0==[] -> true");
+        console.log("0=='' -> true");
+        console.log("1==true -> true");
+        console.log("1!='1' -> false");
+        console.log("1!=true -> false");
+        console.log('');
+
+        console.log('Coerción con === y !==. Igualdad de valor y tipo');
+        console.log('------------------------------------------------');
+        console.log("0===[] -> false");
+        console.log("0==='' -> false");
+        console.log("1===true -> false");
+        console.log("1!=='1' -> true");
+        console.log("1!==true -> true");
+        console.log('');
+    </script>
+</body>
+
+</html>

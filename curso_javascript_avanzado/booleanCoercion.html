@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Virginia Ordoño Bernier">
+    <meta name="reference" content=" Pablo Huet Carrasco, JavaScript Avanzado-Introducción, OpenWebinars">
+    <meta name="content" content="Ejemplos de coerción con booleans">
+    <title>Boolean Coercion</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        //Coerción explícita. Únicos valores que devuelven false en javascript.
+        console.log('Coersión explícita');
+        console.log('------------------');
+        console.log("Boolean('') -> " + Boolean(''));
+        console.log("Boolean(0) -> " + Boolean(0));
+        console.log("Boolean(-0) -> " + Boolean(-0));
+        console.log("Boolean(NaN) -> " + Boolean(NaN));
+        console.log("Boolean(null) -> " + Boolean(null));
+        console.log("Boolean(undefined) -> " + Boolean(undefined));
+        console.log("Boolean(false) -> " + Boolean(false));
+
+        //Coerción implícita depende del contexto o del operador
+        //EL operador ! siempre forzará el casting al valor booleano opuesto
+        console.log('');
+        console.log('Coersión implícita');
+        console.log('------------------');
+        console.log('if(2){ ... } -> true');
+        console.log('!!2 -> true');
+        console.log("2 || 'falso' -> true //devuelve 2");
+    
+    </script>
+</body>
+
+</html>
