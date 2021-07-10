@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Virginia Ordoño Bernier">
+    <meta name="reference" content="Jonathan Rodríguez, JavaScript Intermedio-Eventos, OpenWebinars">
+    <meta name="objective" content="Cambia el fondo de la página con colores aleatorios">
+    <title>Button Events</title>
+</head>
+
+<body>
+    <h1>Eventos</h1>
+    <button id="changeBackground">Cambia el fondo</button>
+
+    <script type='text/javascript'>
+
+    //Con el click del btón se ejectua la acción asignada
+    var button = document.getElementById('changeBackground');
+
+    //Genera números aleatorios para generar colores aleatorios
+    function random(maxNumber){
+    return Math.round(Math.random()*maxNumber);
+    }
+
+    //255 es el límite de los colore RGB
+    button.addEventListener('click', function(event){
+        var randomColor = [
+        random(255),
+        random(255),
+        random(255),
+        ];
+       
+        document.body.style.backgroundColor = 'rgb( ' + randomColor[0] + ', ' + randomColor[1] + ', ' + randomColor[2] + ')'
+    });
+    </script>
+</body>
+</html>

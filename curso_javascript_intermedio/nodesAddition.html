@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Virginia Ordoño Bernier">
+    <meta name="reference" content="Jonathan Rodríguez, JavaScript Intermedio-DOM, OpenWebinars">
+    <meta name="objective" content="Insertar un nodo (en este caso una lista) dentro del DOM">
+    <title>Nodes Addition</title>
+</head>
+
+<body>
+    <p>Insertar un nodo en el DOM</p>
+
+    <!--Creamos una lista a la que luego añadiremos otros nodos-->
+    <ul id=todoList></ul>
+
+    <script type='text/javascript'>
+        var paragraph = document.getElementsByTagName('p');
+
+        paragraph[0].style.color = 'blue';
+        paragraph[0].style.backgroundColor = 'yellow';
+        paragraph[0].style.fontSize = '40px';
+
+        //Creamos una variable que contiene la lista que vamos a incluir
+        var tasks = [
+            'Elemento1',
+            'Elemento2',
+            'Elemento3',
+        ];
+
+        var todoList = document.querySelector('#todoList');
+
+        //Recorremos la variable y accedemos a su contenidos
+        for (let index = 0; index < tasks.length; index++) {
+            var task = tasks[index];
+
+            //Crea una variable con el nombre de la etiqueta
+            var li = document.createElement('li');
+
+            //A la variable de la etiqueta le asignamos el contenido
+            li.textContent = task;
+
+            //Añade el elemento creado al listado creado inicialmente
+            todoList.appendChild(li);
+        }
+    </script>
+</body>
+</html>
