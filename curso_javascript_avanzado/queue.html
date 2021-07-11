@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Virginia Ordoño Bernier">
+    <meta name="reference" content="Pablo Huet Carrasco, JavaScript Avanzado-Estructuras de datos, OpenWebinars">
+    <meta name="content" content="Queue">
+    <title>Queue</title>
+    <style>
+        .definition,
+        li,
+        p {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="title">Colas</h1>
+    <p class="definition">Lista donde al extraer un elemento, este elemento siempre es el primero que hemos añadido.</p>
+    <p><strong>Características</strong>
+    </p>
+    <ul>
+        <li><strong>FIFO(First in First Out)</strong></li>
+
+    </ul>
+
+    <script type="text/javascript">
+        class Queue {
+            constructor(in_items) {
+                this.items = in_items || [];
+            }
+            length() {
+                return this.items.length;
+            }
+            enqueue(element) {
+                //Añadir un elemento
+                this.items.push(element);
+            }
+            dequeue() {
+                //Devuelve el primer elemento o undefined
+                return this.length() > 0 ? this.items.shift() : undefined;
+            }
+        }
+    </script>
+</body>
+
+</html>

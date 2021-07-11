@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Virginia Ordoño Bernier">
+    <meta name="reference" content="Pablo Huet Carrasco, JavaScript Avanzado-Estructuras de datos, OpenWebinars">
+    <meta name="content" content="LinkedList">
+    <title>Linked List</title>
+    <style>
+        .definition,
+        li,
+        p {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="title">Listas Enlazadas</h1>
+    <p class="definition">Estructura de datos donde cada miembro tiene una referencia al miembro siguiente.</p>
+    <p><strong>Características</strong>
+    </p>
+    <ul>
+        <li>Útil para guardar ciertas estructuras complejas como los grafos.</li>
+        <li>Su orden no corresponde al orden de ordenación en memoria, sino al orden de las referencias.</li>
+
+    </ul>
+
+    <script type="text/javascript">
+        //Clase lista enlazada
+        class LinkedList {
+            constructor(head = null) {
+                this.head = head;
+            }
+
+            //Obtener el último elemento
+            getLast() {
+                let lastNode = this.head;
+                if (lastNode) {
+                    while (lastNode.next) {
+                        lastNode = lastNode.next;
+                    }
+                }
+                return lastNode;
+            }
+
+            //Obtener el tamaño
+            size() {
+                let count = 0;
+                let node = this.head;
+                while (node) {
+                    count++;
+                    node = node.next;
+                }
+                return count;
+            }
+        }
+
+        //Clase para los nodos
+        class ListNode {
+            constructor(data) {
+                this.data = data;
+                this.nextId = null;
+            }
+        }
+
+        //Creación de una lista
+        let node1 = new ListNode(2);
+        let node2 = new ListNode(5);
+        nodel.next = node2;
+
+        //Se inicia introduciendo en la lista el primer nodo
+        let list = new LinkedList(node1);
+    </script>
+</body>
+
+</html>

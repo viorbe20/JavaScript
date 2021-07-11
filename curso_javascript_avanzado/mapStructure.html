@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Virginia Ordoño Bernier">
+    <meta name="reference" content="Pablo Huet Carrasco, JavaScript Avanzado-Estructuras de datos, OpenWebinars">
+    <meta name="content" content="Map Structure">
+    <title>Map Structure</title>
+    <style>
+        .definition,
+        li,
+        p {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="title">Estructura Map</h1>
+    <p class="definition">Estructura de datos compuesta por registro formados por una clave y un valor.</p>
+    <p><strong>Características</strong>
+    </p>
+    <ul>
+        <li>Es posible crear un set a partir de cualquier objeto iterable de Javascript.</li>
+        <li>Sus claves pueden ser objetos, funciones o cualquier tipo primitivo.</li>
+        <li>Para el tamaña utilizamos función size().</li>
+        <li>Es iterable.</li>
+    </ul>
+
+    <p><strong>Métodos</strong>
+    </p>
+    <ul>
+        <li><strong>get()</strong>: le pasamos la clave y devuelve el valor.</li>
+        <li><strong>set()</strong>: le pasamos la clave y establece el valor. </li>
+        <li><strong>delete()</strong>: busca el valor que le pasamos y lo borra del map.</li>
+    </ul>
+
+
+
+    <script type="text/javascript">
+        const myMap = new Map();
+        console.log(myMap);
+        console.log('');
+
+        console.log('set()');
+        console.log("myMap.set('a', 1)");
+        console.log("myMap.set('b', 2)");
+        console.log("myMap.set('c', 23)");
+        myMap.set('a', 1);
+        myMap.set('b', 2);
+        myMap.set('c', 3);
+        console.log(myMap);
+        console.log('');
+
+        console.log('get()');
+        console.log("myMap.get('a')");
+        console.log(myMap.get('a'));
+        console.log('');
+
+        console.log('delete()');
+        console.log(myMap);
+        console.log("myMap.delete('a')");
+        myMap.delete('a');
+        console.log(myMap);
+        console.log('');
+    </script>
+</body>
+
+</html>

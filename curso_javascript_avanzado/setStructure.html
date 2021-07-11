@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Virginia Ordoño Bernier">
+    <meta name="reference" content="Pablo Huet Carrasco, JavaScript Avanzado-Estructuras de datos, OpenWebinars">
+    <meta name="content" content="Set Structure">
+    <title>Set Structure</title>
+    <style>
+        .definition,
+        li,
+        p {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="title">Estructura Set</h1>
+    <p class="definition">Estructura de datos compuesta por un conjunto de valores únicos.</p>
+    <p><strong>Características</strong>
+    </p>
+    <ul>
+        <li>No permite datos repetidos.</li>
+        <li>Es posible crear un set a partir de cualquier objeto iterable de Javascript.</li>
+        <li>Útil para obtener valores no repetidos de una lista.</li>
+        <li>Al añadir nuevos valores, si son objetos, el set comprueba sus referencias.</li>
+        <li>Es posible iterar los sets utilizando keys(), values(), entries().</li>
+        <li>Puede crearse un array a partir de un set gracias al uso de destructuring.</li>
+        <li>Si creamos un set de objetos, lo que se comprueba son las referencias, no los valores.</li>
+    </ul>
+
+    <p><strong>Métodos</strong>
+    </p>
+    <ul>
+        <li><strong>add()</strong>: añade el elemento que le pasamos. No lo añade si está repetido.</li>
+        <li><strong>has()</strong>: comprueba si el elemento que le hemos pasado, se encuentra en el set. </li>
+        <li><strong>delete()</strong>: busca el valor que le pasamos y lo borra del set.</li>
+    </ul>
+
+
+
+    <script type="text/javascript">
+        const mySet = new Set([2, 3, 3, 2]);
+        console.log("new Set([2,3,3,2]) -> ");
+        console.log(mySet.values());
+
+        console.log('');
+        console.log('has()');
+        console.log("mySet.has(2) -> " + mySet.has(2));
+        console.log("mySet.has(5) -> " + mySet.has(5));
+
+        console.log('');
+        console.log('add()');
+        console.log(mySet.values());
+        console.log("mySet.add(8)");
+        mySet.add(8);
+        console.log(mySet.values());
+
+        console.log('');
+        console.log('delete()');
+        console.log(mySet.values());
+        console.log("mySet.delete(8)");
+        mySet.delete(8);
+        console.log(mySet.values());
+        console.log('');
+
+        console.log('Creación de arrays con destructuring.');
+        const obj1 = {};
+        const obj2 = {};
+        console.log("mySet.add(obj1)");
+        mySet.add(obj1);
+        console.log(mySet.values());
+    </script>
+</body>
+
+</html>
