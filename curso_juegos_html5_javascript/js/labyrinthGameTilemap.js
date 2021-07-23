@@ -5,7 +5,7 @@ Sesión: 22.
 Plataforma: Udemy.
 Autor: Javier Muñiz.
 Fecha: julio 2021
-Comentario: 
+Comentario: juego del laberinto usando un tilemap.
 */
 
 var canvas;
@@ -15,6 +15,7 @@ var FPS = 50;
 var tilemap;
 var mainCharacter;
 var enemies = [];
+var torchs;
 
 var widthBox = 50;
 var heighBox = 50;
@@ -38,7 +39,6 @@ var stage = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 ];
 
-
 function drawStage() {
 
     for (y = 0; y < stage.length; y++) {
@@ -54,6 +54,33 @@ function drawStage() {
             // widthBox, heighBox: de qué tamaño va a ser lo que dibuje
             ctx.drawImage(tilemap, tile * 32, 0, 32, 32, widthBox * x, heighBox * y, widthBox, heighBox);
         }
+    }
+}
+
+var torchClass = function (x, y) {
+    this.x = x;
+    this.y = y;
+    this.photogram = 0;
+    this.counter = 0;
+    this.delay = 10;
+
+    this.changePhotogram = function () {
+        if (this.photogram < 3) {
+            this.photogram++;
+        } else {
+            this.photogram = 0;
+        }
+    }
+
+    this.drawTorch = function () {
+        if (this.counter < this.delay) {
+            this.counter++;
+        } else {
+            this.counter = 0;
+            this.changePhotogram();
+
+        }
+        ctx.drawImage(tilemap, this.photogram * 32, 64, 32, 32, widthBox * x, heighBox * y, widthBox, heighBox);
     }
 }
 
@@ -85,10 +112,12 @@ var enemiesClass = function (x, y) {
 
     this.move = function () {
 
-        if (this.contador < this.delay) {
-            this.contador++;
+        mainCharacter.collisionEnemy(this.x, this.y);
+
+        if (this.counter < this.delay) {
+            this.counter++;
         } else {
-            this.contador = 0;
+            this.counter = 0;
 
             //Arriba
             //Si va hacia arriba solo para si hay colisión
@@ -142,6 +171,13 @@ var mainCharacterClass = function () {
         ctx.drawImage(tilemap, 32, 32, 32, 32, this.x * widthBox, this.y * heighBox, widthBox, heighBox);
     }
 
+    //Colisión enemigo
+    this.collisionEnemy = function (x, y) {
+        if (this.x == x && this.y == y) {
+            this.death();
+        }
+    }
+
     //Función que controla que el personaje no se salga del laberinto
     //Recibe la posición y devuelve valor booleano
     this.margins = function (x, y) {
@@ -190,6 +226,15 @@ var mainCharacterClass = function () {
         stage[8][3] = 3;
     }
 
+    //Si choca con un enemigo muere
+    this.death = function () {
+        console.log('¡¡Has perdido!!');
+        this.x = 1;
+        this.y = 1;
+        this.llave = false;
+        stage[8][3] = 3;
+    }
+
     //Comprueba el valor de la casilla donde está cada vez que el personaje se mueve
     this.checkObjects = function () {
         var object = stage[this.y][this.x];
@@ -220,6 +265,7 @@ function clearCanvas() {
 function main() {
     clearCanvas();
     drawStage();
+    torch1.drawTorch();
     mainCharacter.draw();
 
     //Bucle para dibujar a los enemigos
@@ -239,6 +285,9 @@ function initialize() {
 
     //Creamos objeto protagonista
     mainCharacter = new mainCharacterClass();
+
+    //Creamos las antorchas
+    torch1 = new torchClass(0,0);
 
     //Creamos objeto enemigos
     //.push() añade un nuevo valor al array
